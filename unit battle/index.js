@@ -1,16 +1,16 @@
 class Unit {
   constructor(name) {
     this.name = name;
-    this.health = 10;
-    this.rechargeTime = 1000 * this.health/10;
-    this.damage = this.health/10
+    this.health = 100;
+    this.rechargeTime = 1000 * this.health/100;
+    this.damage = this.health/100
     this.criticalChance = 10 - this.health/10
   }
   attack(unit){
     if(this.criticalChance>=Math.random()*101) unit.health = unit.health - this.damage*2
     else unit.health = unit.health - this.damage
-    unit.rechargeTime = 1000 * unit.health/10
-    unit.damage = unit.health/10
+    unit.rechargeTime = 1000 * unit.health/100
+    unit.damage = unit.health/100
     unit.criticalChance = 10 - unit.health/10
   }
 }
